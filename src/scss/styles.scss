@@ -1,12 +1,77 @@
 @import url("https://fonts.googleapis.com/css2?family=B612+Mono&family=DM+Serif+Display:ital@0;1&display=swap");
 @import "_variables";
 @import "_elements";
-
+@import "_mixins";
+@import "_button";
 * {
   box-sizing: border-box;
+  font-family: inherit;
 }
 
 body {
-  font-family: "DM Serif Display", monospace;
-  background-color: orange;
+  font-family: "RingsideExtraWide-Book, Blank, " Helvetica Neue
+    ", Helvetica, sans-serif";
+  display: grid;
+  grid-template-columns: min-content 1.5fr;
+  height: 100%;
+  header {
+    height: 780px;
+    background-color: $headerBg;
+    grid-column: 1 / 2;
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+    gap: $mainPadding;
+    padding: $mainPadding;
+    padding-right: 150px;
+    overflow-y: scroll;
+
+    h1 {
+      height: 216px;
+      width: 100%;
+      color: $red;
+      font-size: $titleHeight;
+      line-height: $titleHeight;
+      text-decoration: none solid rgb(231, 71, 60);
+      text-transform: uppercase;
+      word-spacing: 0;
+      transform: matrix(1, 0, 0, 1, -7.2, 0);
+      transition: all 0s ease 0s;
+      box-sizing: border-box;
+      span {
+        display: block;
+      }
+    }
+    .bottom {
+      width: 100%;
+      height: fit-content;
+      p {
+        color: $red;
+        text-decoration: none solid rgb(231, 71, 60);
+        word-spacing: 0px;
+        word-break: break-all;
+        margin-bottom: 1em;
+        &:first-child {
+          font-size: 24px;
+          line-height: 28.8px;
+        }
+        &:last-child {
+          @include mFont;
+          text-indent: -7.5px;
+        }
+      }
+      nav {
+        margin-bottom: 2em;
+        a {
+          @include mFont;
+          color: $gray;
+          margin-right: 1rem;
+        }
+      }
+      small {
+        @include mFont;
+        font-size: 0.8rem;
+        color: gray;
+      }
+    }
+  }
 }
