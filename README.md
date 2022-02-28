@@ -1,4 +1,4 @@
-# SCSS Masterclass
+# Best Horror Scene Clone with Scss
 
 (S)CSS Layout Masterclass: Flexbox & Grid
 
