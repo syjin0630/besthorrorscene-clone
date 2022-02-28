@@ -11,27 +11,25 @@
 body {
   font-family: "RingsideExtraWide-Book, Blank, " Helvetica Neue
     ", Helvetica, sans-serif";
-  display: grid;
-  grid-template-columns: min-content 1.5fr;
   height: 100%;
+  background-color: $bgRed;
   header {
     height: 780px;
     background-color: $headerBg;
-    grid-column: 1 / 2;
     display: grid;
     grid-template-rows: 1fr 4fr;
     gap: $mainPadding;
     padding: $mainPadding;
-    padding-right: 150px;
     overflow-y: scroll;
-
+    position: fixed;
+    margin-right: $main;
     h1 {
       height: 216px;
       width: 100%;
       color: $red;
       font-size: $titleHeight;
       line-height: $titleHeight;
-      text-decoration: none solid rgb(231, 71, 60);
+      text-decoration: none solid $bgRed;
       text-transform: uppercase;
       word-spacing: 0;
       transform: matrix(1, 0, 0, 1, -7.2, 0);
@@ -71,6 +69,88 @@ body {
         @include mFont;
         font-size: 0.8rem;
         color: gray;
+      }
+    }
+  }
+  main {
+    margin-left: $header;
+    width: max-content;
+    filter {
+      z-index: 100;
+      position: fixed;
+      height: $top;
+      width: $main;
+      background-color: $bgRed;
+      opacity: 0.95;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid #831d1651;
+      span {
+        font-family: RingsideRegularSSm-Book, Blank, "Helvetica Neue", Helvetica,
+          sans-serif;
+        color: white;
+      }
+      a {
+        color: $brown;
+        &:hover {
+          color: white;
+        }
+      }
+    }
+    container {
+      position: absolute;
+      top: $top;
+      width: $main;
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      scroll-snap-type: y mandatory;
+      div {
+        scroll-snap-align: center;
+        height: 700px;
+        width: 100%;
+        padding: 3em;
+        background-image: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.1),
+          transparent
+        );
+        * {
+          color: white;
+          display: inline-block;
+        }
+        span {
+          text-indent: -1.5rem;
+          font-size: 1.3em;
+          &:first-child {
+            opacity: 0;
+            color: $brown;
+            font-size: 1.8em;
+            padding-right: 0.8em;
+            @include hashtrans;
+            transition-delay: 1s;
+            &:hover {
+              @include hashtrans;
+              opacity: 1;
+            }
+          }
+          &:last-child {
+            height: 26.8px;
+            width: 47.6875px;
+            text-align: center;
+          }
+        }
+        h4 {
+          font-size: 1.8em;
+        }
+        iframe {
+          width: 100%;
+          height: 80%;
+          display: block;
+          margin-top: 1em;
+          box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.5);
+        }
       }
     }
   }

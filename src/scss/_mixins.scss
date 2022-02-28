@@ -3,3 +3,6 @@
   line-height: 21px;
   text-align: justify;
 }
+@mixin hashtrans {
+  transition: 0.5s ease-in-out;
+}
