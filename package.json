@@ -1,8 +1,8 @@
 {
-  "name": "scss-masterclass",
+  "name": "besthorrorscene",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/syjin0630/scss-masterclass",
+  "repository": "https://github.com/syjin0630/besthorrorscene-clone",
   "author": "syjin0630",
   "license": "MIT",
   "dependencies": {
